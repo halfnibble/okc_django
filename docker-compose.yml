@@ -7,8 +7,7 @@ services:
             MYSQL_DATABASE: horsetrader
             MYSQL_USER: root
             MYSQL_ROOT_PASSWORD: MFERiv6jojI
-            MYSQL_ROOT_HOST: "172.*.*.*"
-        restart: always
+            MYSQL_ROOT_HOST: "%"
     web:
         build: .
         command: python3 manage.py runserver 0.0.0.0:8000
@@ -16,6 +15,5 @@ services:
             - .:/code
         ports:
             - "8000:8000"
-        restart: always
         depends_on:
             - db
