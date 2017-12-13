@@ -30,7 +30,6 @@ class Horse(models.Model):
         decimal_places=2,
         default='0.00')
 
-    def __unicode__(self):
-        return '{0}, {1}, ${2}'.format(self.name, self.get_breed_display,
-                                       self.price)
+    def __str__(self):
+        return '{0} ({1}) ${2}'.format(self.name, self.breed, self.price)
 
